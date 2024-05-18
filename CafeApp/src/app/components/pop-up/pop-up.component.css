@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #f4f4f4, #ffffff); /* Gradient arka plan */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    background: #ffffff;
+    transition: background-color 0.3s ease-in-out; /* Geçiş efekti */
+}
+
+.navbar:hover {
+    background-color: #f8f9fa; /* Hover durumunda yumuşak renk değişimi */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px; /* Sabit yükseklik, isteğinize göre ayarlayabilirsiniz */
+    object-fit: cover; /* Resimlerin fit olmasını sağlar */
+    border-radius: 10px; /* Hafif border-radius ekledik */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ortalamak için */
+    gap: 10px;
+    width: 100%; /* Genişliği %100 yaparak ortalama */
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+#navbar-title {
+    flex-grow: 1; /* Ortalamayı sağlamak için */
+    text-align: center;
+}
+
+.container {
+    padding-top: 20px; /* Üstten biraz boşluk bıraktık */
+}
+
+#content {
+    margin-top: 30px;
+}
+
+#content .content-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#content .content-item:hover {
+    transform: translateY(-5px);
+}
+
+.modal-content {
+    border: none; /* Kenarlıkları kaldır */
+    border-radius: 10px; /* Kenarları hafifçe yuvarlat */
+    overflow: hidden; /* Resmin tam oturmasını sağla */
+}
+
+.modal-dialog-centered {
+    max-width: 400px; /* Genişlik */
+    max-height: 300px; /* Yükseklik */
+}
+
+.custom-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none; /* Focus stilini kaldır */
+}
+
+.custom-close:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: rotate(90deg);
+}
+
+.custom-close span {
+    font-size: 1.5rem;
+}
