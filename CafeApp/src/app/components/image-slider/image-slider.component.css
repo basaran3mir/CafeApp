@@ -1,0 +1,17 @@
+.carousel {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.slide {
+    height: 40vh;
+    width: 100%;
+    background-color: #563721;
+}
+
+.slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+

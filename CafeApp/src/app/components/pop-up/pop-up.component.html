@@ -1,47 +1,13 @@
-<p>pop-up works!</p>
-
-<body>
-    <div class="container my-5">
-        <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators" id="carousel-indicators">
-                <!-- Carousel indicators will be inserted here dynamically -->
-            </ol>
-            <div class="carousel-inner" id="carousel-inner">
-                <!-- Carousel items will be inserted here dynamically -->
-            </div>
-        </div>
+<div class="base-div">
+    <div class="exit-div">
+        <button class="btn btn-danger" mat-dialog-close mat-button>
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
-    
-    <div class="container" id="content">
-        <!-- Existing content can go here -->
-        <div class="content-item">
-            <h4>Sample Content Item 1</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        </div>
-        <div class="content-item">
-            <h4>Sample Content Item 2</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        </div>
-        <!-- Add more content as needed -->
+    <div class="title-div">
+        <h2 mat-dialog-title>{{ data.title }}</h2>
     </div>
-    
-    <!-- Placeholder for Footer -->
-    <div id="footer-placeholder"></div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    
-</body>
-
-<div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <button type="button" class="close m-2 custom-close" aria-label="Close" id="closePopupButton">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <img id="popupImage" src="" alt="" class="img-fluid">
-        </div>
+    <div class="img-div">
+        <img class="popup-image" src="assets\images\popup.png" alt="Logo">
     </div>
 </div>
