@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PopupService } from '../../services/pop-up-state.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.css'
 })
 
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
+
+  constructor(private popupStateService: PopupService) { 
+  }
+
+  ngOnInit(): void {
+    this.popupStateService.showPopup();
+  }
+
 
 }

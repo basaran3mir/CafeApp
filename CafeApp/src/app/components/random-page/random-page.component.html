@@ -1,1 +1,20 @@
-<p>random-page works!</p>
+<section>
+    <p class="page-header" style="border-bottom: 2px solid black;">Our Coffee List</p>
+    <div class="coffees-box">
+        <div class="coffee" *ngFor="let coffee of coffeeList">
+            <div class="image-side">
+                <img class="coffee-image" src={{coffee.image}} alt="">
+            </div>
+            <div class="info-side">
+                <p class="coffee-name">{{coffee.name}}</p>
+                <p class="coffee-price" [ngStyle]="{ 'text-decoration': coffee.onDiscount ? 'line-through' : 'none',
+                                                      'color': coffee.onDiscount ? '#9c9c9c' : 'black' }">
+                    Price: {{coffee.price}}TL
+                </p>
+                <p class="coffee-onDiscount" *ngIf="coffee.onDiscount">
+                    Price: {{coffee.newPrice}}TL
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

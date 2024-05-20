@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { PopUpComponent } from './components/pop-up/pop-up.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +8,4 @@ import { PopUpComponent } from './components/pop-up/pop-up.component';
 export class AppComponent{
 
   title="CafeApp"
-
-  constructor(private dialog: MatDialog) {}
-
-  showPopup(): void {
-    const dialogRef = this.dialog.open(PopUpComponent, {
-      data: {
-        title: 'SPECIAL OFFER',
-      }
-    });
-  }
-
 }

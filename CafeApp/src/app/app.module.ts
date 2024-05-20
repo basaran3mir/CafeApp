@@ -12,7 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { PopUpComponent } from './components/pop-up/pop-up.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { PopupService } from './services/pop-up-state.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    PopupService
   ],
   bootstrap: [AppComponent]
 })

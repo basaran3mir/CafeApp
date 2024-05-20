@@ -26,28 +26,5 @@ export class ImageSliderComponent {
     "autoplaySpeed": 2500
   };
   
-  addSlide() {
-    this.slides.push({img: "assets/images/popup.png"})
-  }
-  
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
-  
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
-  
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-  
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-  
-  beforeChange(e: any) {
-    console.log('beforeChange');
-  }
 
 }

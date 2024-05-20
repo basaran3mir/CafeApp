@@ -1,5 +1,4 @@
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
     @for (slide of slides; track slide.img) {
     <div ngxSlickItem class="slide">
         <img src="{{ slide.img }}" alt="">
