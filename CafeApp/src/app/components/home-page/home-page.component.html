@@ -1,1 +1,11 @@
 <app-image-slider></app-image-slider>
+<section>
+    <p class="page-header" style="border-bottom: 2px solid black;">Our Category List</p>
+    <div class="catogires-box">
+        <div class="category" *ngFor="let category of categoryList" (click)="navigateToUrl(category.id)">
+            <div class="image-side">
+                <img class="category-image" src={{category.image}} alt="">
+            </div>
+        </div>
+    </div>
+</section>

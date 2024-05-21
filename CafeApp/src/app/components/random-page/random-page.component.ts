@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Coffee } from '../../models/coffee';
+import { CoffeeService } from '../../services/coffee.service';
+import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-random-page',
@@ -8,37 +11,27 @@ import { Coffee } from '../../models/coffee';
 })
 export class RandomPageComponent {
 
+  categoryId: number | null = null;
+  categoryName: string | null = null;
   coffeeList: Coffee[] = []; // Kahve listesi
+  
+  constructor(private coffeeService: CoffeeService, private categoryService: CategoryService, private route: ActivatedRoute) {
 
-  constructor() {
-    this.coffeeList = [
-      new Coffee(1, 'Espresso', 5.99, false),
-      new Coffee(2, 'Cappuccino', 4.99, true),
-      new Coffee(3, 'Latte', 6.99, false),
-      new Coffee(4, 'Americano', 6.99, false),
-      new Coffee(5, 'Macchiato', 6.99, false),
-      new Coffee(6, 'Mocha', 6.99, false),
-      new Coffee(7, 'Turkish Coffee', 6.99, false),
-      new Coffee(8, 'Flat White', 6.99, false),
-      new Coffee(9, 'Affogato', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-      new Coffee(10, 'Irish Coffee', 6.99, false),
-    ];
+    this.route.paramMap.subscribe(params => {
 
-    this.coffeeList.forEach(coffee => {
-      if (coffee.onDiscount) {
-        coffee.setDiscount(10);
+      const categoryIdString = params.get('id');
+
+      if (categoryIdString) {
+
+        this.categoryId = parseInt(categoryIdString, 10);
+        this.coffeeList = this.coffeeService.getCoffeeListByCategory(this.categoryId);
+
+        this.categoryName = this.categoryService.getCategoryNameById(this.categoryId);
+        
       }
+
     });
+
   }
 
 

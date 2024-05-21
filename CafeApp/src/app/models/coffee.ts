@@ -1,16 +1,20 @@
 export class Coffee {
     private _id: number = 0;
     private _image: string = '';
+    private _categoryId: number = -1;
     private _name: string = '';
     private _price: number = 0;
+    private _inStock: boolean = false;
     private _onDiscount: boolean = false;
     private _newPrice: number = 0;
 
-    constructor(id: number, name: string, price: number, onDiscount: boolean) {
+    constructor(id: number, image:string, categoryId: number, name: string, price: number, inStock: boolean, onDiscount: boolean) {
         this._id = id;
-        this._image = "assets/images/coffee.png";
+        this._image = image;
+        this._categoryId= categoryId;
         this._name = name;
         this._price = price;
+        this._inStock = inStock;
         this._onDiscount = onDiscount;
         this._newPrice = this._price;
     }
@@ -39,12 +43,28 @@ export class Coffee {
         this._name = value;
     }
 
+    get categoryId(): number {
+        return this._categoryId;
+    }
+
+    set categoryId(value: number) {
+        this._categoryId = value;
+    }
+
     get price(): number {
         return this._price;
     }
 
     set price(value: number) {
         this._price = value;
+    }
+
+    get inStock(): boolean {
+        return this._inStock;
+    }
+
+    set inStock(value: boolean) {
+        this._inStock = value;
     }
 
     get onDiscount(): boolean {
@@ -62,9 +82,5 @@ export class Coffee {
     set newPrice(value: number) {
         this._newPrice = value;
     }
-
-    setDiscount(percent: number) {
-        this._newPrice = parseFloat((this._price - this._price / percent).toFixed(2))
-      }
 
 }

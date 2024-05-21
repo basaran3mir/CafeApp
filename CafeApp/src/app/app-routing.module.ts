@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { RandomPageComponent } from './components/random-page/random-page.component';
-import { PopUpComponent } from './components/pop-up/pop-up.component';
 
 const routes: Routes = [
   {
@@ -15,16 +14,12 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: "random",
+    path: "home/random/category/:id",
     component: RandomPageComponent
   },
   {
-    path: "popup",
-    component: PopUpComponent
-  },
-  {
     path: '**',
-    redirectTo: 'hata',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

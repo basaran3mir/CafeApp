@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { PopupService } from '../../services/pop-up-state.service';
+import { Component} from '@angular/core';
+import { PopupService } from '../../services/pop-up.service';
+import { Category } from '../../models/category';
+import { CategoryService } from '../../services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -7,14 +10,17 @@ import { PopupService } from '../../services/pop-up-state.service';
   styleUrl: './home-page.component.css'
 })
 
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
 
-  constructor(private popupStateService: PopupService) { 
+  categoryList: Category[] = [];
+
+  constructor(private popupStateService: PopupService, private categoryService: CategoryService, private router: Router) {
+    this.popupStateService.showPopup()
+    this.categoryList = this.categoryService.getCategoryList();
   }
 
-  ngOnInit(): void {
-    this.popupStateService.showPopup();
+  navigateToUrl(categoryId: number): void {
+    this.router.navigate(['home/random/category/'+categoryId]);
   }
-
 
 }
