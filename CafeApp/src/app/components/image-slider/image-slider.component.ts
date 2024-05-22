@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { arrow } from '@popperjs/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-image-slider',
@@ -11,9 +10,7 @@ export class ImageSliderComponent {
 
   slides = [
     {img: "assets/images/logo.png"},
-    {img: "assets/images/logo.png"},
-    {img: "assets/images/logo.png"},
-    {img: "assets/images/logo.png"}
+    {img: "assets/images/banner.png"}
   ];
 
   slideConfig = {

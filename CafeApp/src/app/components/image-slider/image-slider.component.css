@@ -1,15 +1,16 @@
 .carousel {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .slide {
-    height: 40vh;
-    width: 100%;
-    background-color: #563721;
+    height: 50vh;
+    background-color: rgb(245, 245, 245); /* %50 opaklık */
 }
 
 .slide img {
+    padding: 30px;
+    border-radius: 20px;
     height: 100%;
     width: 100%;
     object-fit: contain;

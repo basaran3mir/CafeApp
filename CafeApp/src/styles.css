@@ -1,4 +1,13 @@
-* {
-    font-family: 'Poppins';
-    font-size: 18px;
+body {
+    font-family: 'Poppins' !important;
+    font-size: 18px !important;
+    width: 75% !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 }

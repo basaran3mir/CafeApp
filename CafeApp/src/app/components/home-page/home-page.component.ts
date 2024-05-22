@@ -20,7 +20,7 @@ export class HomePageComponent {
   }
 
   navigateToUrl(categoryId: number): void {
-    this.router.navigate(['home/random/category/'+categoryId]);
+    this.router.navigate(['home/coffee/category/'+categoryId]);
   }
 
 }

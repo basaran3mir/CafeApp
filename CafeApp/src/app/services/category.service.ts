@@ -9,7 +9,7 @@ import { Category } from '../models/category';
 
 export class CategoryService {
     
-    private defaultCategoryImg = "assets/images/coffee.png";
+    private defaultCategoryImg = "assets/images/coffee-bean.jpg";
     private categoryList: Category[] = []
 
     constructor() {
@@ -18,7 +18,8 @@ export class CategoryService {
             new Category(1, this.defaultCategoryImg, 'Milk Based'),
             new Category(2, this.defaultCategoryImg, 'Hot'),
             new Category(3, this.defaultCategoryImg, 'Cold'),
-            new Category(4, this.defaultCategoryImg, 'Another'),
+            new Category(4, this.defaultCategoryImg, 'Another1'),
+            new Category(5, this.defaultCategoryImg, 'Another2')
         ];
     }
 
@@ -29,6 +30,6 @@ export class CategoryService {
     getCategoryNameById(categoryId: number): string | null {
         const category = this.categoryList.find(category => category.id === categoryId);
         return category ? category.name : null;
-      }
+    }
 
 }

@@ -1,24 +1,24 @@
 <section>
-    <p class="page-header" style="border-bottom: 2px solid black;">{{ categoryName }}</p>
+    <p class="page-header" style="border-bottom: 2px solid black;">{{ categoryName }} Coffees</p>
     <div class="coffees-box">
         <div class="coffee" *ngFor="let coffee of coffeeList">
             <div class="badge-side">
                 <div class="stock-badge" *ngIf="!coffee.inStock">Out Of Stock</div>
                 <div class="discount-badge" *ngIf="coffee.onDiscount">On Sale</div>
             </div>
-            <div class="image-side" [ngStyle]="{ 'margin-top': (coffee.onDiscount || !coffee.inStock) ? '30px' : '60px' }">
+            <div class="image-side">
                 <img class="coffee-image" src={{coffee.image}} alt="">
+                <p class="coffee-name">{{coffee.name}}</p>
             </div>
             <div class="info-side">
-                <p class="coffee-name">{{coffee.name}}</p>
                 <p class="coffee-price" [ngStyle]="{ 'text-decoration': coffee.onDiscount ? 'line-through' : 'none',
-                                                      'color': coffee.onDiscount ? '#9c9c9c' : 'black' ,
-                                                      'font-size': coffee.onDiscount ? '15px' : '18px' 
+                                                      'color': coffee.onDiscount ? '#9c9c9c' : '#000' ,
+                                                      'font-size': coffee.onDiscount ? '15px' : '20px' 
                                                     }">
-                    Price: {{coffee.price}}TL
+                    {{coffee.price}} ₺
                 </p>
-                <p class="coffee-onDiscount" *ngIf="coffee.onDiscount">
-                    Price: {{coffee.newPrice}}TL
+                <p class="coffee-newPrice" *ngIf="coffee.onDiscount">
+                    {{coffee.newPrice}} ₺
                 </p>
             </div>
         </div>

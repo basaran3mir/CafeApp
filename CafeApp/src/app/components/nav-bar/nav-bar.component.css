@@ -1,12 +1,27 @@
-.cafe-name-p {
+.navbar-light {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 5vh;
+    background-color: white !important;
+}
+
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.cafe-name {
+    width: 100%;
+    color: black !important;
     font-size: 18px;
     transition: font-size 0.5s ease; /* Geçiş efekti */
-    padding: 9px;
+    padding: 8px;
     font-size: 22px;
 }
 
 .nav-link {
-    color: black;
+    color: black !important;
     font-size: 18px; /* Normal boyut */
     transition: font-size 0.5s ease; /* Geçiş efekti */
 }
@@ -20,8 +35,7 @@
 }
 
 .nav-link.active {
-    background-color: white;
-    color: black;
+    color: black !important;
     font-size: 22px; /* Hover olduğunda büyük boyuta geçiş */
 }
 
@@ -29,4 +43,3 @@ a {
     display: flex;
     align-items: center;
 }
-
