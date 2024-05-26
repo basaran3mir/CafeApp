@@ -4,7 +4,7 @@
         <div class="coffee" *ngFor="let coffee of coffeeList">
             <div class="badge-side">
                 <div class="stock-badge" *ngIf="!coffee.inStock">Out Of Stock</div>
-                <div class="discount-badge" *ngIf="coffee.onDiscount">On Sale</div>
+                <div class="discount-badge" *ngIf="coffee.inStock && coffee.onDiscount">On Sale</div>
             </div>
             <div class="image-side">
                 <img class="coffee-image" src={{coffee.image}} alt="">

@@ -1,21 +1,21 @@
 export class Coffee {
-    private _id: number = 0;
-    private _image: string = '';
-    private _categoryId: number = -1;
-    private _name: string = '';
-    private _price: number = 0;
-    private _inStock: boolean = false;
-    private _onDiscount: boolean = false;
-    private _newPrice: number = 0;
+    private _id: number;
+    private _image: string;
+    private _categoryId: number;
+    private _name: string;
+    private _price: number;
+    private _inStock: boolean;
+    private _onDiscount: boolean;
+    private _newPrice: number;
 
-    constructor(id: number, image:string, categoryId: number, name: string, price: number, inStock: boolean, onDiscount: boolean) {
+    constructor(id: number, image:string, categoryId: number, name: string, price: number, inStock: boolean) {
         this._id = id;
         this._image = image;
         this._categoryId= categoryId;
         this._name = name;
         this._price = price;
         this._inStock = inStock;
-        this._onDiscount = onDiscount;
+        this._onDiscount = false;
         this._newPrice = this._price;
     }
 
@@ -81,6 +81,7 @@ export class Coffee {
     
     set newPrice(value: number) {
         this._newPrice = value;
+        this._onDiscount = true;
     }
 
 }
